@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.meera.multidatasource">
+	<author>E5410</author>
+	<namespace>meera</namespace>
+	<entity name="TableFromDefaultDataSource" local-service="true" remote-service="true">
+		<column name="IFDDSId" type="long" primary="true" />
+		<column name="Description" type="String" />
+	</entity>
+	<entity name="TableFromAnotherDataSource" table="TableFromAnotherDataSource"  local-service="true" remote-service="true" data-source="anotherDataSource" session-factory="anotherSessionFactory">
+		<column name="IFADSId" type="long" primary="true" />
+		<column name="Description" type="String" />
+	</entity>
+</service-builder>

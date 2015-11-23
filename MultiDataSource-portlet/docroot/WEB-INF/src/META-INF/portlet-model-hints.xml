@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.meera.multidatasource.model.TableFromAnotherDataSource">
+		<field name="IFADSId" type="long" />
+		<field name="Description" type="String" />
+	</model>
+	<model name="com.meera.multidatasource.model.TableFromDefaultDataSource">
+		<field name="IFDDSId" type="long" />
+		<field name="Description" type="String" />
+	</model>
+</model-hints>

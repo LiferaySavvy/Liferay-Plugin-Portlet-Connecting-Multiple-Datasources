@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.meera.multidatasource.model.TableFromAnotherDataSource" />
+	<import class="com.meera.multidatasource.model.TableFromDefaultDataSource" />
+	<class name="com.meera.multidatasource.model.impl.TableFromAnotherDataSourceImpl" table="TableFromAnotherDataSource">
+		<cache usage="read-write" />
+		<id name="IFADSId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.meera.multidatasource.model.impl.TableFromDefaultDataSourceImpl" table="meera_TableFromDefaultDataSource">
+		<cache usage="read-write" />
+		<id name="IFDDSId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="Description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>

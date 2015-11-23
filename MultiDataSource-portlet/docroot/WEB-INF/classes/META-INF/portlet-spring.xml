@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.meera.multidatasource.service.TableFromAnotherDataSourceLocalService" class="com.meera.multidatasource.service.impl.TableFromAnotherDataSourceLocalServiceImpl" />
+	<bean id="com.meera.multidatasource.service.TableFromAnotherDataSourceService" class="com.meera.multidatasource.service.impl.TableFromAnotherDataSourceServiceImpl" />
+	<bean id="com.meera.multidatasource.service.persistence.TableFromAnotherDataSourcePersistence" class="com.meera.multidatasource.service.persistence.TableFromAnotherDataSourcePersistenceImpl" parent="basePersistence">
+		<property name="dataSource" ref="anotherDataSource" />
+		<property name="sessionFactory" ref="anotherSessionFactory" />
+	</bean>
+	<bean id="com.meera.multidatasource.service.TableFromDefaultDataSourceLocalService" class="com.meera.multidatasource.service.impl.TableFromDefaultDataSourceLocalServiceImpl" />
+	<bean id="com.meera.multidatasource.service.TableFromDefaultDataSourceService" class="com.meera.multidatasource.service.impl.TableFromDefaultDataSourceServiceImpl" />
+	<bean id="com.meera.multidatasource.service.persistence.TableFromDefaultDataSourcePersistence" class="com.meera.multidatasource.service.persistence.TableFromDefaultDataSourcePersistenceImpl" parent="basePersistence" />
+</beans>

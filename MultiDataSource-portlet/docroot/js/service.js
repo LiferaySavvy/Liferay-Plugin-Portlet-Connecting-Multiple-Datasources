@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.meera", "com.meera.multidatasource.service", "MultiDataSource-portlet");
